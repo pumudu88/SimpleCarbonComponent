@@ -1,0 +1,20 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1415118606286
+Build-Jdk: 1.6.0_65
+Built-By: pumudu
+Bundle-ManifestVersion: 2
+Bundle-Name: org.wso2.carbon.order.mgt.ui
+Bundle-SymbolicName: org.wso2.carbon.order.mgt.ui
+Bundle-Version: 4.2.0
+Carbon-Component: UIBundle
+Created-By: Apache Maven Bundle Plugin
+Export-Package: org.wso2.carbon.order.mgt.ui;uses:="org.apache.axis2.con
+ text,org.wso2.carbon.order.mgt.data.xsd";version="4.2.0",org.wso2.carbo
+ n.order.mgt.ui.i18n;version="4.2.0"
+Import-Package: org.apache.axis2.client;resolution:=optional;version="[1
+ .6,2)",org.apache.axis2.context;resolution:=optional;version="[1.6,2)",
+ org.wso2.carbon.order.mgt.data.xsd;resolution:=optional;version="[4.2,5
+ )",org.wso2.carbon.order.mgt.stub;resolution:=optional;version="[4.2,5)
+ "
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.5))"
+Tool: Bnd-2.3.0.201405100607

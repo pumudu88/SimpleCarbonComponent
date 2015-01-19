@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>order-manager</artifactId>
+        <groupId>org.wso2.carbon</groupId>
+        <version>4.2.0</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>order-manager-repository</artifactId>
+    <packaging>pom</packaging>
+    <name>WSO2 Carbon - Order Manager Repository</name>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>wso2-maven2-repository-1</id>
+            <url>http://dist.wso2.org/maven2</url>
+        </pluginRepository>
+        <pluginRepository>
+            <id>wso2-maven2-repository-2</id>
+            <url>http://dist.wso2.org/snapshots/maven2</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.wso2.maven</groupId>
+                <artifactId>carbon-p2-plugin</artifactId>
+                <version>1.5.3</version>
+                <executions>
+                    <execution>
+                        <id>2-p2-repo-generation</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>p2-repo-gen</goal>
+                        </goals>
+                        <configuration>
+                            <metadataRepository>file:${basedir}/target/p2-repo</metadataRepository>
+                            <artifactRepository>file:${basedir}/target/p2-repo</artifactRepository>
+                            <publishArtifacts>true</publishArtifacts>
+                            <publishArtifactRepository>true</publishArtifactRepository>
+                            <featureArtifacts>
+                                <featureArtifactDef>
+                                    org.wso2.carbon:org.wso2.carbon.order.mgt.feature:4.2.0
+                                </featureArtifactDef>
+                            </featureArtifacts>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
